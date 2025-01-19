@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: RevenueAnalytics
+    schema: RevenueAnalytics
+    tables:
+      - name: AcceptanceReport
+        description: "Source table for acceptance report"
+      - name: ChargebackReport
+        description: "Source table for chargeback report"

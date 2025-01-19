@@ -1,0 +1,36 @@
+name: 'revenue_analytics_project'
+version: '1.0'
+config-version: 2
+
+profile: 'revenue_analytics_project'
+
+# Directory where compiled files will be stored
+target-path: "target"
+
+# Directory where dbt modules are installed
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+# Configure model paths and materializations
+models:
+  revenue_analytics_project:
+    # Path for your base models
+    base_models:
+      +materialized: view
+    # Path for your staging models
+    staging_models:
+      +materialized: view
+    # Path for your final analytics models
+    analytics_models:
+      +materialized: view
+
+# Optional: Configure seeds
+seeds:
+  revenue_analytics_project:
+    +quote_columns: true
+
+# Optional: Configure snapshots
+snapshots:
+  revenue_analytics_project:
+    +target: dev
