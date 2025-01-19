@@ -2,9 +2,21 @@ version: 2
 
 sources:
   - name: RevenueAnalytics
-    schema: RevenueAnalytics
+    description: Source database for revenue analytics
     tables:
       - name: AcceptanceReport
-        description: "Source table for acceptance report"
+        description: Source table for acceptance report
+        columns:
+          - name: external_ref
+            description: Primary key for AcceptanceReport
+            tests:
+              - unique
+              - not_null
       - name: ChargebackReport
-        description: "Source table for chargeback report"
+        description: Source table for chargeback report
+        columns:
+          - name: external_ref
+            description: Primary key for ChargebackReport
+            tests:
+              - unique
+              - not_null
